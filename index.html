@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nady Markova Makeup</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #0a0a0a;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ЯЗЫКИ */
+.lang {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+.lang button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 6px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('IMG_1416.JPG') center/cover no-repeat;
+}
+
+/* ГРАДИЕНТ КАК В РЕФЕРЕНСЕ */
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.9) 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(0,0,0,0.2) 70%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
+/* ТЕКСТ */
+.hero-content {
+    position: relative;
+    max-width: 600px;
+}
+
+/* ГЛАВНЫЙ ТЕКСТ */
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 110px;
+    line-height: 0.85;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+/* ПОДПИСЬ */
+.hero p {
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #c7b7a3;
+}
+
+/* ОПИСАНИЕ */
+.hero-desc {
+    margin-top: 15px;
+    color: rgba(255,255,255,0.7);
+    max-width: 400px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="lang">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('es')">ES</button>
+</div>
+
+<header class="hero">
+
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1 id="title">MAKEUP IS MY ART</h1>
+
+<p id="brand">NADY MARKOVA · COSTA BARCELONA</p>
+
+<div class="hero-desc" id="desc">
+Makeup portfolio: natural and glamorous looks, perfect for photoshoots and seaside weddings.
+</div>
+
+</div>
+</header>
+
+<script>
+const content = {
+    en: {
+        title: "MAKEUP IS MY ART",
+        brand: "NADY MARKOVA · COSTA BARCELONA",
+        desc: "Makeup portfolio: natural and glamorous looks, perfect for photoshoots and seaside weddings."
+    },
+    ru: {
+        title: "МАКИЯЖ — ЭТО ИСКУССТВО",
+        brand: "NADY MARKOVA · COSTA BARCELONA",
+        desc: "Портфолио визажиста: естественные и гламурные образы для фотосессий и свадеб у моря."
+    },
+    es: {
+        title: "EL MAQUILLAJE ES ARTE",
+        brand: "NADY MARKOVA · COSTA BARCELONA",
+        desc: "Portafolio de maquillaje: looks naturales y glamorosos para sesiones y bodas junto al mar."
+    }
+};
+
+function setLang(lang) {
+    document.getElementById('title').innerText = content[lang].title;
+    document.getElementById('brand').innerText = content[lang].brand;
+    document.getElementById('desc').innerText = content[lang].desc;
+}
+
+// старт на английском
+setLang('en');
+</script>
+
+</body>
+</html>
